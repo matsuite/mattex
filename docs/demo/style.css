@@ -1,0 +1,13 @@
+.center {
+  width: 100%;
+  text-align: center;
+}
+.left {
+    text-align: left;
+}
+.textinp {
+    width: 5rem;
+}
+.intinp {
+    width: 1.5rem;
+}
