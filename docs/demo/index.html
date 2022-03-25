@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mattex</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="center">
+        <h1>Coins: <span id="coinsval">0</span>, Level: <span id="lvlval">1</span></h1>
+        <h2>Lowest keystrokes to level up: <span id="pb">N/A</span></h2>
+        <h2>Current keystrokes: <span id="curr">0</span></h2>
+	    <button onclick="if(prompt('RESET GAME? Type reset in the box and press enter for yes, escape to cancel.') == 'reset') {localStorage.clear();window.location.reload()}">Reset</button>
+        <button onclick="p.coins = p.coins < 5 ? 0:p.coins-5;document.getElementById('coinsval').innerHTML = p.coins;p.mapList[p.lvl] = mazegen(32,8);p.gameMap = p.mapList[p.lvl];p.yxGameMap=p.gameMap.split('\n');p.playerPos=[0,0];p.keystrokes = 0;">New map</button>
+        <canvas id="canv"></canvas>
+    	<script src="src/mattex.js"></script>
+    	<script src="src/media.js"></script>
+    	<!--<script src="src/tex.js"></script>
+        <script src="src/movement.js"></script>
+        <script src="physics.js"></script>-->
+        <script src="script.js"></script>
+    </div>
+  </body>
+</html>
