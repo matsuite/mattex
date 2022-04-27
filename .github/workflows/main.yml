@@ -1,35 +1,25 @@
-name: Lint
+name: Continuous Integration
 
+# This action works with pull requests and pushes
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the main branch
-  push:
-    branches:
-      - main
   pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  run-linters:
-    name: Run linters
+  prettier:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
         with:
-          node-version: 12
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
 
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.2
         with:
-          eslint: true
-          prettier: true
+          # This part is also where you can pass other options, for example:
+          prettier_options: --write **/*.{js,md}
