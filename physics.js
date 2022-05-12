@@ -69,10 +69,6 @@ const EARTH_SETTINGS = [AIR_RHO, EARTH_ACCEL, AIR_DRAG_COEFF, EARTH_ACCEL];
 function radians(v) {
   return (v * Math.PI) / 180;
 }
-function v1motion(u, acceleration, time) {
-  var v = u.add(acceleration.mul(time));
-  return new Vector1(0.5).mul(v.add(u)).mul(time);
-}
 function u1motion(v, acceleration, time) {
   var u = v.sub(acceleration.mul(time));
   return new Vector1(0.5).mul(v.add(u)).mul(time);
