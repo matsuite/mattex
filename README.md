@@ -1,7 +1,6 @@
 # mattex
-
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matsuite/mattex/Continuous%20Integration)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matsuite/mattex/Minify%20Workflow)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matsuite/mattex/Continuous%20Integration?label=CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matsuite/mattex/Minify%20Workflow?label=Minify)
 
 rendering 4 js &amp; Co.
 
