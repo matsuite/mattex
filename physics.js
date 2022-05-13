@@ -246,7 +246,7 @@ var physics = {
   requires: [],
   optionalRequires: [],
   optFuncs: {},
-  description: "Adds support for basic projectile physics in mattex.",
+  description: "Adds support for basic projectile physics to mattex.",
   funcs: {
     p_obj(x, y, w, h, m, prop = EARTH_SETTINGS) {
       return new sObject(
