@@ -39,6 +39,6 @@ async function combineLibs(whichLib) {
     if(tex.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/tex.min.js");
     if(color.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/color.min.js");
     if(movement.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/movement.min.js");
-    document.write(`<pre><code>${res}</code></pre>`)
+    document.write(`<pre style="word-wrap: break-word;"><code>${res}</code></pre>`)
 }
 </script>
