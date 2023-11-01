@@ -17,7 +17,6 @@ jobs:
         with:
           source_dir: .
           output_dir: ./docs/jsdoc
-          config_file: conf.json
           front_page: index.html
 
       - name: Deploy
