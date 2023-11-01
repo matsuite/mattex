@@ -1,0 +1,44 @@
+<h1>Build Your Mattex</h1>
+BYM compiles your choice of Mattex libraries together into one file.<br />
+<input type="checkbox" disabled checked /> mattex <br />
+<input type="checkbox" id="media" /> media <br />
+<input type="checkbox" id="movement" /> movement <br />
+<input type="checkbox" id="tex" /> tex <br />
+<input type="checkbox" id="xy" /> xy <br />
+<input type="checkbox" id="physics" /> physics <br />
+<input type="checkbox" id="color" /> color <br />
+<button onclick="combineLibs();">combine!</button>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function httpGet(theUrl)
+    {
+        let xmlhttp;
+
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else { // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                return xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", theUrl, false);
+        xmlhttp.send();
+
+        return xmlhttp.response;
+    }
+async function combineLibs(whichLib) {
+    var res = "";
+    res += await httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/mattex.min.js");
+    if(media.checked) res += await httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/media.min.js");
+    if(xy.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/xy.min.js");
+    if(physics.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/physics.min.js");
+    if(tex.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/tex.min.js");
+    if(color.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/color.min.js");
+    if(movement.checked) res += httpGet("https://raw.githubusercontent.com/matsuite/mattex/main/dist/movement.min.js");
+    document.write(`<pre><code>${res}</code></pre>`)
+}
+</script>
