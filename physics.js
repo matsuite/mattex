@@ -100,7 +100,7 @@ function projMotion(d, v, m, rho, a, C_d, g, t) {
         ? v_y < 0
           ? -Math.abs(v_t.x)
           : Math.abs(v_t.x)
-        : v_y
+        : v_y,
     ),
     new Vector2(x, y),
     g,
@@ -227,7 +227,7 @@ class sObject {
         v2,
         combined_m,
         new Vector2(v_angle.x, v2_angle.x),
-        angle_of_collision
+        angle_of_collision,
       );
       //collision_results[0] = BLANK2.sub(collision_results[0])
       //collision_results[1] = BLANK2.sub(collision_results[1])
@@ -253,7 +253,7 @@ var physics = {
         new Vector1(m),
         new Vector2(w, h),
         new Vector2(x, y),
-        prop
+        prop,
       );
     },
     p_rect(obj, colprop, prop) {

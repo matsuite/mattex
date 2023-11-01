@@ -18,7 +18,7 @@ var movement = {
       prop,
       time,
       keyframeCount,
-      drawBetween
+      drawBetween,
     ) {
       var mpix = Math.round((x2 - x1) / keyframeCount); // Movement per iteration X-axis
       var mpiy = Math.round((y2 - y1) / keyframeCount); // Movement per iteration Y-axis
@@ -39,7 +39,7 @@ var movement = {
       prop,
       time,
       keyframeCount,
-      drawBetween
+      drawBetween,
     ) {
       var mpix = Math.round((x2 - x1) / keyframeCount); // Movement per iteration X-axis
       var mpiy = Math.round((y2 - y1) / keyframeCount); // Movement per iteration Y-axis

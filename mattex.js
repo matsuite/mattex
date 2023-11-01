@@ -93,7 +93,8 @@ class Image {
     this.u =
       unit == null
         ? Math.ceil(
-            (width * height) / 10 ** ((width * height).toString().length - 1.95)
+            (width * height) /
+              10 ** ((width * height).toString().length - 1.95),
           )
         : unit;
     this.centerX = Math.floor(width / 2);
@@ -253,7 +254,7 @@ function m_package(pluginlist) {
         errors.push(
           `Plugin ${
             e[0]
-          } is asking for ${f}, but ${f} is not found here.\nList of found plugins:\n${names.toString()}.\nList of dependencies:\n${dependencies.toString()}.`
+          } is asking for ${f}, but ${f} is not found here.\nList of found plugins:\n${names.toString()}.\nList of dependencies:\n${dependencies.toString()}.`,
         );
       }
     });
@@ -264,7 +265,7 @@ function m_package(pluginlist) {
         console.log(
           `[WARN] Plugin ${
             e[0]
-          } is asking for ${f}, but ${f} is not found here.\nList of found plugins:\n${names.toString()}.\nList of dependencies:\n${dependencies.toString()}.`
+          } is asking for ${f}, but ${f} is not found here.\nList of found plugins:\n${names.toString()}.\nList of dependencies:\n${dependencies.toString()}.`,
         );
       } else {
         Object.assign(res, e[2]);

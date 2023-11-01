@@ -25,7 +25,7 @@ var tex = {
         y,
         f,
         "https://latex.codecogs.com/gif.latex?\\dpi{300}" + text,
-        u
+        u,
       );
     },
     s_text(x, y, f, text, u = this.u) {
@@ -41,7 +41,7 @@ var tex = {
         w,
         h,
         "https://latex.codecogs.com/gif.latex?\\dpi{300}" + text,
-        u
+        u,
       );
     },
     text(x, y, w, h, text, u = this.u) {
