@@ -227,7 +227,7 @@ class Image {
   }
 }
 /**
- * Draw a graph of a function on the canvas.
+ * Installs a plguin's functions into the current file.
  * @function
  * @param {Object[]} pluginlist - The list of plugin details to depend on.
  */
