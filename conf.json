@@ -4,7 +4,7 @@
     "source": {
         "includePattern": ".+\\.js(doc|x)?$",
         "excludePattern": "(^|\\/|\\\\)_",
-        "exclude": ["./index.html"]
+        "exclude": ["./docs/*"]
     },
     "sourceType": "module",
     "tags": {
